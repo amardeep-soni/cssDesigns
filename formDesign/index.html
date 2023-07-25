@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="cont">
+        <div id="formCard">
+            <div class="design"></div>
+            <h1 id="formText">Sign In</h1>
+            <div id="formTopButton">
+                <div class="topButton" onclick="signInText()">Sign In</div>
+                <div class="topButton" onclick="signUpText()">Sign Up</div>
+                <span id="textDesign"></span>
+            </div>
+            <div id="formCont">
+                <form action="" id="signinForm">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingInput" placeholder="example">
+                        <label for="floatingInput">Password</label>
+                    </div>
+                    <input type="submit" class="btn" value="Sign in">
+                </form>
+                <form action="" id="signupForm">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingInput" placeholder="example">
+                        <label for="floatingInput">Password</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingInput" placeholder="example">
+                        <label for="floatingInput">Conform Password</label>
+                    </div>
+                    <input type="submit" class="btn" value="Sign Up">
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script>
+        let signinForm = document.getElementById("signinForm");
+        let signupForm = document.getElementById("signupForm");
+        let formCont = document.getElementById("formCont");
+        let textDesign = document.getElementById("textDesign");
+        let formText = document.getElementById("formText");
+        let topButton = document.getElementsByClassName("topButton");
+        function signInText() {
+            formCont.style.height = "200px"; // form height trigger
+            setTimeout(() => {
+                // showing hiding form
+                signinForm.style.display = "block";
+                signupForm.style.display = "none";
+
+                // text changing in top heading
+                formText.innerText = "Sign In";
+
+                // top button style
+                topButton[0].style.color = "white";
+                topButton[1].style.color = "black";
+
+                // moving the design back to right place
+                textDesign.style.left = 0;
+                textDesign.style.right = "initial";
+            }, 200);
+
+        }
+        function signUpText() {
+            formCont.style.height = "350px" // form height trigger
+            setTimeout(() => {
+                // showing hiding form
+                signinForm.style.display = "none";
+                signupForm.style.display = "block";
+
+                // text changing in top heading
+                formText.innerText = "Sign Up";
+
+                // top button style
+                topButton[1].style.color = "white";
+                topButton[0].style.color = "black";
+
+                // moving the design back to right place
+                textDesign.style.right = 0;
+                textDesign.style.left = "initial";
+            }, 200);
+
+        }
+    </script>
+</body>
+
+</html>
